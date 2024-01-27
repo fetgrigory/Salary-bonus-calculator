@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Salary bonus calculator</string>
+    <string name="result_amount">Добавь к зарплате: %s</string>
+
+</resources>

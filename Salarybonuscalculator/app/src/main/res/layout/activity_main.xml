@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    tools:context=".MainActivity">
+    <EditText
+        android:id="@+id/salary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Введите зарплату"
+        android:inputType="number"
+        android:textColorHint="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+<TextView
+    android:id="@+id/service_question"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Оцените качество работы сотрудника"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/salary"
+    android:textColor="@color/white"
+    />
+    <RadioGroup
+        android:id="@+id/salary_bonus_options"
+        android:checkedButton="@id/options_ten"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/service_question">
+        <RadioButton
+            android:id="@+id/options_fifteen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Великолепно (15%)"/>
+        <RadioButton
+            android:id="@+id/options_ten"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Отлично (10%)"/>
+        <RadioButton
+            android:id="@+id/options_five"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Нормально (5%)"/>
+    </RadioGroup>
+
+    <Switch
+        android:id="@+id/round_switch"
+        android:checked="true"
+        app:layout_constraintTop_toBottomOf="@+id/salary_bonus_options"
+        app:layout_constraintStart_toStartOf="@+id/salary_bonus_options"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:text="Округлять премию?"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/calculate_button"
+        app:layout_constraintBaseline_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/round_switch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/brown"
+        android:text="Рассчитать"/>
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/calculate_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/white"
+        android:text="Размер премии"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
